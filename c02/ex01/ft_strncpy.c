@@ -6,10 +6,10 @@
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 15:51:23 by saad              #+#    #+#             */
-/*   Updated: 2025/12/22 16:23:11 by saad             ###   ########.fr       */
+/*   Updated: 2026/01/03 22:11:47 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
+
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
@@ -26,11 +26,12 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	}
 	return dest;
 }
+#include<stdio.h>
 int main()
 {
 	char src[] ="helllo";
 	char dest[20];
-	int N = 10;
+	int N = 1;
 	ft_strncpy(dest , src , N);
 	printf("dest = %s\n", dest);
 }

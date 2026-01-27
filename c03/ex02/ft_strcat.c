@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 18:10:23 by saad              #+#    #+#             */
-/*   Updated: 2026/01/17 19:40:07 by saad             ###   ########.fr       */
+/*   Created: 2026/01/17 15:03:10 by saad              #+#    #+#             */
+/*   Updated: 2026/01/25 15:49:25 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-int	ft_str_is_alpha(char *str)
+#include<unistd.h>
+char	*ft_strcat(char	*dest, char *src)
 {
 	int i = 0;
-	while(str[i] != '\0')
+	int j = 0;
+	while(dest[i])
+	i++;
+	while(src[j])
 	{
-		if(!((str[i] >= 'a' && str[i] <= 'z')  || (str[i] >= 'A' && str[i] <= 'Z')))
-		return 0;1
+		dest[i] = src[j];
 		i++;
+		j++;	
 	}
-	return 1;
+	dest[i] = '\0';
+	return dest;
 }
+#include<stdio.h>
 int main()
 {
-	printf("%d\n", ft_str_is_alpha("salam"));
-	printf("%d\n", ft_str_is_alpha("123"));
-	printf("%d\n", ft_str_is_alpha(""));
+	char d[] ="hello";
+	char s[] =" world";
+	ft_strcat(d , s);
+	printf("%s\n", d);
 }

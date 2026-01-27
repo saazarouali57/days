@@ -6,10 +6,10 @@
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 16:56:33 by saad              #+#    #+#             */
-/*   Updated: 2025/12/19 17:22:19 by saad             ###   ########.fr       */
+/*   Updated: 2026/01/17 19:40:07 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdio.h>
+
 void	ft_swap(int *a, int *b)
 {
 	int temp;
@@ -19,20 +19,19 @@ void	ft_swap(int *a, int *b)
 }
 void	ft_sort_in_tab(int *tab , int size)
 {
-	int i;
+	int start;
 	int j;
-	i = 0;
-	while(i < size -1)
+	start = 0;
+	while(start < size -1)
 	{
-
-		j = i + 1;
+		j = start + 1;
 		while(j < size)
 		{
-			if(tab[i] > tab[j])
-			ft_swap(&tab[i] , &tab[j]);
+			if(tab[start] > tab[j])
+			ft_swap(&tab[start] , &tab[j]);
 			j++;
 		}
-		i++;
+		start++;
 	}
 }
 int main()
@@ -44,6 +43,7 @@ int main()
     ft_sort_in_tab(tab, size);
 
     printf("Sorted array: ");
+
     while(i < size)
     {
         printf("%d ", tab[i]);

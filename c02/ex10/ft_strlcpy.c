@@ -6,10 +6,10 @@
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 16:10:32 by saad              #+#    #+#             */
-/*   Updated: 2025/12/23 16:54:12 by saad             ###   ########.fr       */
+/*   Updated: 2026/01/05 00:14:36 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<unistd.h>
+
 unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int i = 0;
@@ -31,7 +31,7 @@ int main()
 {
 	char source[] = "salam";
 	char dest [10];
-	unsigned int a = 0;
+	unsigned int a = 8;
 	int len;
 	len = ft_strlcpy(dest , source , a);
 	printf("%d\n", len);

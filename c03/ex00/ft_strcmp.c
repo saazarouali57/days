@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 18:10:23 by saad              #+#    #+#             */
-/*   Updated: 2026/01/17 19:40:07 by saad             ###   ########.fr       */
+/*   Created: 2026/01/06 15:44:12 by saad              #+#    #+#             */
+/*   Updated: 2026/01/07 19:15:17 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-int	ft_str_is_alpha(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int i = 0;
-	while(str[i] != '\0')
+	int i;
+	i = 0;
+	while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
 	{
-		if(!((str[i] >= 'a' && str[i] <= 'z')  || (str[i] >= 'A' && str[i] <= 'Z')))
-		return 0;1
 		i++;
 	}
-	return 1;
+	return(s1[i] - s2[i]);
 }
+#include<stdio.h>
 int main()
 {
-	printf("%d\n", ft_str_is_alpha("salam"));
-	printf("%d\n", ft_str_is_alpha("123"));
-	printf("%d\n", ft_str_is_alpha(""));
+	char str1[] = "talam";
+	char str2[] = "Salam";
+	//ft_strcmp(str1 , str2);
+	printf("%d\n", ft_strcmp(str1 , str2));
 }
