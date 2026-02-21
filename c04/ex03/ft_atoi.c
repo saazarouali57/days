@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 02:31:15 by saad              #+#    #+#             */
-/*   Updated: 2026/02/20 14:31:25 by saad             ###   ########.fr       */
+/*   Created: 2026/01/31 17:26:50 by saad              #+#    #+#             */
+/*   Updated: 2026/01/31 23:41:54 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void ft_putchar(char c)
+int	ft_atoi(char *str)
 {
-    write(1, &c, 1);
+	int i = 0;
+	int sign = 1;
+	int result = 0;
+	while(str[i] == ' ' ||  (str[i] >= 9 && str[i] <= 13))
+	i++;
+	while(str[i] == '-' || str[i] == '+')
+	{
+		if(str[i] == '-')
+		sign = -sign;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	 {
+		 result = result * 10 + (str[i] - '0');
+		 i++;
+	 }
+	 return result * sign;
 }
-
+#include<stdio.h>
 int main()
 {
-    ft_putchar('a');
+	char str1[] = "   -1234abc";
+	printf("%d\n", ft_atoi(str1));
 }
+

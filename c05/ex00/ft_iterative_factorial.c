@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 02:31:15 by saad              #+#    #+#             */
-/*   Updated: 2026/02/20 14:31:25 by saad             ###   ########.fr       */
+/*   Created: 2026/02/01 13:14:22 by saad              #+#    #+#             */
+/*   Updated: 2026/02/01 13:27:07 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-void ft_putchar(char c)
+#include<stdio.h>
+int ft_iterative_factorial(int nb)
 {
-    write(1, &c, 1);
+	int result;
+	if (nb < 0)
+	{
+		return 0;
+	}
+	result = 1;
+	while(nb > 0)
+	{
+		result *= nb;
+		nb --;
+	}
+	return result;
 }
-
 int main()
 {
-    ft_putchar('a');
+	int n = 5;
+	printf("%d\n", ft_iterative_factorial(n));
+
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 02:31:15 by saad              #+#    #+#             */
-/*   Updated: 2026/02/20 14:31:25 by saad             ###   ########.fr       */
+/*   Created: 2026/01/28 16:39:05 by saad              #+#    #+#             */
+/*   Updated: 2026/01/28 16:41:44 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-void ft_putchar(char c)
+#include<stdio.h>
+int	ft_strlen(char *str)
 {
-    write(1, &c, 1);
+	int i = 0;
+	while(str[i])
+	i++;
+	return i;
 }
-
 int main()
 {
-    ft_putchar('a');
+	char str[]= "salam";
+	int len = ft_strlen(str);
+	printf("%d\n", len);
 }

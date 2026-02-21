@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saad <saad@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 02:31:15 by saad              #+#    #+#             */
-/*   Updated: 2026/02/20 14:31:25 by saad             ###   ########.fr       */
+/*   Created: 2026/01/28 16:51:18 by saad              #+#    #+#             */
+/*   Updated: 2026/01/28 17:04:52 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-void ft_putchar(char c)
+#include<unistd.h>
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
-
+void	ft_putnbr(int nb)
+{
+	if(nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return;
+	}
+	if(nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if(nb > 9)
+	ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + 48);
+}
 int main()
 {
-    ft_putchar('a');
+	ft_putnbr(-4);
 }
