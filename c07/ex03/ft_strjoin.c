@@ -9,7 +9,7 @@
 /*   Updated: 2026/05/11 12:58:55 by saad             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stdlib.h>
+
 #include<stdio.h>
 int	total_lenght(int size , char **strs , char *sep)
 {
